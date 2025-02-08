@@ -17,3 +17,9 @@ About this API:
 
 This api was made by @volxphy
 dont forget to credit me 
+
+
+
+## CREDITS:
+**XENO** | RIZVE
+Bytecode Injection method, Xeno.dll
