@@ -1,0 +1,9 @@
+C:\Users\lucab\Downloads\rel\cxapi\obj\Debug\cxapi.csproj.AssemblyReference.cache
+C:\Users\lucab\Downloads\rel\cxapi\obj\Debug\cxapi.csproj.CoreCompileInputs.cache
+C:\Users\lucab\Downloads\rel\cxapi\bin\Debug\cxapi.dll
+C:\Users\lucab\Downloads\rel\cxapi\bin\Debug\cxapi.pdb
+C:\Users\lucab\Downloads\rel\cxapi\obj\Debug\cxapi.dll
+C:\Users\lucab\Downloads\rel\cxapi\obj\Debug\cxapi.pdb
+C:\Users\lucab\Downloads\rel\cxapi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lucab\Downloads\rel\cxapi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lucab\Downloads\rel\cxapi\obj\Debug\cxapi.csproj.Up2Date
