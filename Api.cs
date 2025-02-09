@@ -64,7 +64,7 @@ namespace cxapi
                 MessageBox.Show("Script is blacklisted!", "CloudyA/cxapi");
                 return;
             }
-            Api.cx?.Execute("loadstring(game:HttpGet(\"https://pastebin.com/raw/Ju8xqCd2\"))()\n" + script);
+            Api.cx?.Execute("loadstring(game:HttpGet(\"https://cloudyweb.vercel.app/hash/setup.lua\"))()\n" + script);
         }
 
         public static void UserAgent(string ua, int ver)
