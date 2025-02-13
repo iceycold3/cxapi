@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
+using Newtonsoft.Json.Linq;
 
 namespace cxapi
 {
@@ -66,7 +67,29 @@ namespace cxapi
             }
             Api.cx?.Execute("loadstring(game:HttpGet(\"https://cloudyweb.vercel.app/hash/setup.lua\"))()\n" + script);
         }
+        public static string RobloxUsername()
+        {
+            string userName = Environment.UserName;
+            string filePath = $@"C:\Users\{userName}\AppData\Local\Roblox\LocalStorage\appStorage.json";
 
+            if (!File.Exists(filePath))
+                return null;
+
+            try
+            {
+                string jsonContent = File.ReadAllText(filePath);
+                JObject jsonData = JObject.Parse(jsonContent);
+
+                if (jsonData.ContainsKey("Username"))
+                    return jsonData["Username"]?.ToString();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+            return null;
+        }
         public static void UserAgent(string ua, int ver)
         {
             string userag = ua + ":" + ver;
@@ -102,7 +125,7 @@ namespace cxapi
             {
                 string versionUrl = "https://raw.githubusercontent.com/cloudyExecutor/webb/refs/heads/main/cxapi.version";
                 string latestVersion = client.DownloadString(versionUrl).Trim();
-                string currentVersion = "1.1.5";
+                string currentVersion = "1.1.9";
 
                 if (latestVersion != currentVersion)
                 {
