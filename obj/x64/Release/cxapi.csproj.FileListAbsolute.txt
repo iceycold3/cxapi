@@ -1,0 +1,9 @@
+C:\Users\Wip\source\repos\iceycold3\cxapi\bin\x64\Release\cxapi.dll
+C:\Users\Wip\source\repos\iceycold3\cxapi\bin\x64\Release\cxapi.pdb
+C:\Users\Wip\source\repos\iceycold3\cxapi\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\Wip\source\repos\iceycold3\cxapi\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\Wip\source\repos\iceycold3\cxapi\obj\x64\Release\cxapi.csproj.AssemblyReference.cache
+C:\Users\Wip\source\repos\iceycold3\cxapi\obj\x64\Release\cxapi.csproj.CoreCompileInputs.cache
+C:\Users\Wip\source\repos\iceycold3\cxapi\obj\x64\Release\cxapi.csproj.Up2Date
+C:\Users\Wip\source\repos\iceycold3\cxapi\obj\x64\Release\cxapi.dll
+C:\Users\Wip\source\repos\iceycold3\cxapi\obj\x64\Release\cxapi.pdb

@@ -36,7 +36,7 @@ namespace cxapi
         {
             if (isua == false)
             {
-                MessageBox.Show("ERR: Config not set! (did you define UserAgent(); ?", "CloudyA/cxapi");
+                MessageBox.Show("ERR: Config not set! (did you define UserAgent(); ?", "Icey/cxapi");
                 throw new Exception("CONFIG NOT SET!");
             }
             else
@@ -56,40 +56,17 @@ namespace cxapi
 
         public static bool IsRobloxOpen() => Process.GetProcessesByName("RobloxPlayerBeta").Length != 0;
 
-        public static string[] GetActiveClientNames() => Api.cx?.GetActiveClientNames();
 
         public static void Execute(string script)
         {
             if (IsScriptBlacklisted(script))
             {
-                MessageBox.Show("Script is blacklisted!", "CloudyA/cxapi");
+                MessageBox.Show("Script is blacklisted!", "Icey/cxapi");
                 return;
             }
-            Api.cx?.Execute("loadstring(game:HttpGet(\"https://cloudyweb.vercel.app/hash/setup.lua\"))()\n" + script);
+            Api.cx?.Execute("loadstring(game:HttpGet(\"https://raw.githubusercontent.com/iceycold3/cxapidata/refs/heads/main/preload.lua\"))()\n" + script);
         }
-        public static string RobloxUsername()
-        {
-            string userName = Environment.UserName;
-            string filePath = $@"C:\Users\{userName}\AppData\Local\Roblox\LocalStorage\appStorage.json";
-
-            if (!File.Exists(filePath))
-                return null;
-
-            try
-            {
-                string jsonContent = File.ReadAllText(filePath);
-                JObject jsonData = JObject.Parse(jsonContent);
-
-                if (jsonData.ContainsKey("Username"))
-                    return jsonData["Username"]?.ToString();
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-
-            return null;
-        }
+       
         public static void UserAgent(string ua, int ver)
         {
             string userag = ua + ":" + ver;
@@ -123,13 +100,13 @@ namespace cxapi
         {
             using (var client = new WebClient())
             {
-                string versionUrl = "https://raw.githubusercontent.com/cloudyExecutor/webb/refs/heads/main/cxapi.version";
+                string versionUrl = "https://raw.githubusercontent.com/iceycold3/cxapidata/refs/heads/main/cxapi.version";
                 string latestVersion = client.DownloadString(versionUrl).Trim();
-                string currentVersion = "1.1.9";
+                string currentVersion = "1.2.0";
 
                 if (latestVersion != currentVersion)
                 {
-                    MessageBox.Show("Your cxapi is outdated. Please update to the latest version.", "CloudyA/cxapi");
+                    MessageBox.Show("Your cxapi is outdated. Please update to the latest version.", "Icey/cxapi");
                 }
             }
         }
@@ -151,7 +128,7 @@ namespace cxapi
                 {
                     try
                     {
-                        string dllUrl = $"https://github.com/cloudyExecutor/webb/releases/download/dlls/{dll}";
+                        string dllUrl = $"https://github.com/iceycold3/cxapidata/raw/refs/heads/main/{dll}";
                         using (var client = new WebClient())
                         {
                             client.DownloadFile(dllUrl, dllPath);
@@ -166,7 +143,7 @@ namespace cxapi
         }
         private static void BroadcastNotification()
         {
-            string broadcastUrl = "https://raw.githubusercontent.com/cloudyExecutor/webb/refs/heads/main/brod.cast";
+            string broadcastUrl = "https://raw.githubusercontent.com/iceycold3/cxapidata/refs/heads/main/brod.cast";
 
             try
             {
@@ -179,7 +156,7 @@ namespace cxapi
                         NotifyIcon notifyIcon = new NotifyIcon();
                         notifyIcon.Icon = SystemIcons.Information;
                         notifyIcon.Visible = true;
-                        notifyIcon.BalloonTipTitle = "cxapi Broadcast";
+                        notifyIcon.BalloonTipTitle = "Notification";
                         notifyIcon.BalloonTipText = content;
                         notifyIcon.ShowBalloonTip(5000);
 
@@ -276,11 +253,6 @@ namespace cxapi
         public bool IsInjected() => this.isInjected;
 
         public bool IsRobloxOpen() => Process.GetProcessesByName("RobloxPlayerBeta").Length != 0;
-
-        public string[] GetActiveClientNames()
-        {
-            return this.GetClientsFromDll().Select<cxapi.ClientInfo, string>((Func<cxapi.ClientInfo, string>)(c => c.name)).ToArray<string>();
-        }
 
         public void Injectcx()
         {
