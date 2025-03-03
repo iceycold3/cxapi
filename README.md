@@ -1,25 +1,12 @@
-# CXAPI
-Custom Xeno Api
+## Note
+This is a fork of CXAPI which uses Xeno. I am only a maintainer of CXAPI, due to it being randomly discountinued. All thanks go to Xeno and CXAPI for their work, as the work I am doing for this project is very minimal compared to what they have done.
 
+## Dependencies
+- [**httplib**](https://github.com/yhirose/cpp-httplib)
+- [**xxhash**](https://github.com/Cyan4973/xxHash)
+- [**zstd**](https://github.com/facebook/zstd)
+- [**openssl**](https://github.com/openssl/openssl)
 
-
-About this API:
-- 89% UNC
-- LEVEL 6
-- BYTECODE INJECTION
-- Xeno.dll Loader
-- Roblox Web version ONLY
-
-
-
-
-
-
-This api was made by @volxphy
-dont forget to credit me 
-
-
-
-## CREDITS:
-**XENO** | RIZVE
-Bytecode Injection method, Xeno.dll
+### Credits
+[**Rizve**](https://github.com/Riz-ve) for creating Xeno, the backbone of this project.
+[**Volxphy**](https://github.com/volxphys) for creating CXapi, the original API of this project.
